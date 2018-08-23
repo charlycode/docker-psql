@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  psql:
+    image: charlycode/psql94:master
+    container_name: psql
+    env_file:
+      - ./.psql
+    volumes:
+      - /psql:/var/lib/pgsql/data
+      - /usr/share/zoneinfo/America/Monterrey:/etc/localtime:ro
+    ports:
+      - "5432:5432"
